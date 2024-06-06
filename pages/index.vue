@@ -8,6 +8,7 @@
 		<ion-content class="ion-padding">
 			<h1>Hello World</h1>
 			<v-card class="mx-auto"
+							style="max-width: 100%;"
 							prepend-icon="$vuetify"
 							subtitle="The #1 Vue UI Library"
 							width="400">
@@ -23,7 +24,7 @@
 			</v-card>
 			<v-card color="#952175"
 							class="mx-auto"
-							style="margin-top: 20px"
+							style="margin-top: 20px; max-width: 100%"
 							width="400">
 				<div class="d-flex flex-no-wrap justify-space-between">
 					<div>
@@ -47,6 +48,29 @@
 					</v-avatar>
 				</div>
 			</v-card>
+			<h1>Account</h1>
+			<ion-button expand="full">Owner details</ion-button>
 		</ion-content>
 	</ion-page>
 </template>
+<style>
+:root {
+	/**
+     * Setting the variables for DEMO purposes only.
+     * Values will be set automatically when building an iOS or Android app.
+     */
+	--ion-safe-area-top: 20px;
+	--ion-safe-area-bottom: 20px;
+	--ion-safe-area-left: 20px;
+	--ion-safe-area-right: 20px;
+}
+</style>
+
+<style scoped>
+ion-content::part(scroll) {
+	padding-top: var(--ion-safe-area-top, 0);
+	padding-bottom: var(--ion-safe-area-bottom, 0);
+	padding-left: var(--ion-safe-area-left, 0);
+	padding-right: var(--ion-safe-area-right, 0);
+}
+</style>
