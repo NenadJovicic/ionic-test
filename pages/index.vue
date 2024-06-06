@@ -50,7 +50,7 @@
 			</v-card>
 			<h1>Account</h1>
 			<ion-button expand="full"
-									router-link="/owner-details">
+									v-on:click="goToOwnerDetails">
 				Owner details
 			</ion-button>
 		</ion-content>
@@ -60,7 +60,7 @@
 
 const router = useIonRouter();
 
-
+const goToOwnerDetails = () => router.push('/owner-details');
 </script>
 <style>
 :root {
