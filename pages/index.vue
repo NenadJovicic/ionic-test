@@ -49,10 +49,19 @@
 				</div>
 			</v-card>
 			<h1>Account</h1>
-			<ion-button expand="full">Owner details</ion-button>
+			<ion-button expand="full"
+									router-link="/owner-details">
+				Owner details
+			</ion-button>
 		</ion-content>
 	</ion-page>
 </template>
+<script setup lang="ts">
+
+const router = useIonRouter();
+
+
+</script>
 <style>
 :root {
 	/**
