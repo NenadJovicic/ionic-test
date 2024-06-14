@@ -1,13 +1,15 @@
 export default defineNuxtRouteMiddleware(async (to, from) => {
-  const router = useIonRouter();
+  const website = useWebsiteStore();
+  await callOnce(website.fetch);
+  console.log(website.name, website.description);
   const userLoggedIn = await getRandomBoolean();
   console.log(userLoggedIn, to.path);
   if (to.path === '/login' && userLoggedIn) {
     console.log('navigating to root');
-    return router.replace({ name: '/index' });
+    return navigateTo('/', { replace: true });
   } else if (to.path !== '/login' && !userLoggedIn) {
     console.log('navigating to login');
-    return router.replace({ name: '/login' });
+    return navigateTo('/login', { replace: true });
   }
   console.log('navigating to whatever it was');
 });
